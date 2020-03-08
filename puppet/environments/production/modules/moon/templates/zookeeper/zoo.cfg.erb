@@ -1,0 +1,29 @@
+# Note: This file is managed by Puppet.
+
+
+# The number of milliseconds of each tick
+tickTime=2000
+
+# The number of ticks that the initial
+# synchronization phase can take
+initLimit=5
+
+# The number of ticks that can pass between
+# sending a request and getting an acknowledgement
+syncLimit=5
+
+# the directory where the snapshot is stored.
+dataDir=<%= @dataDir %>
+
+# the port at which the clients will connect
+clientPort=<%= @zookeeper_port %>
+maxClientCnxns=0
+
+#the maximum sessiontimeout in the server will allow the client to negotiate. Defaults to 20 times tickTime.
+
+#maxSessionTimeout=60000
+
+<% @zookeeper_quorum.sort.each do |var| -%>
+server.<%= var.gsub(/[^0-9]/i, "").to_i %> = <%= var %>:2888:3888
+<% end -%>
+

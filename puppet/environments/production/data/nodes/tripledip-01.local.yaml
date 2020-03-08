@@ -1,0 +1,10 @@
+---
+classes:
+  - moon::base
+  - moon::java
+  - moon::zookeeper
+
+moon::zookeeper::java_opts:
+moon::zookeeper::zookeeper_quorum:
+  - tripledip-01.local
+moon::java::java_version: 'java-1.8.0-openjdk'

@@ -1,0 +1,10 @@
+---
+
+moon::base::packages:
+  - ruby-devel
+  - htop
+  - nmap
+  - socat
+  - telnet
+  - bind-utils
+  - lsof
